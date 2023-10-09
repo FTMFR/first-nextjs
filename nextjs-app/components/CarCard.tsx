@@ -2,12 +2,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { CarProps } from "@/types";
-import { CustomButton } from ".";
-import { calculateCarRent } from "@/utils";
+import { CarDetails, CustomButton } from "@/components";
+import { calculateCarRent,generateCarImageUrl } from "@/utils";
 
 interface CarCardProps {
   car: CarProps;
-}
+};
 
 const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
@@ -15,7 +15,7 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
 
   return (
-    <div className="car-card group:">
+    <div className="car-card group">
       <div className="car-car-card__content">
         <h2 className="car-car-card__content-title">
           {make} {model}
@@ -36,7 +36,7 @@ const CarCard = ({ car }: CarCardProps) => {
         />
       </div>
       <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray">
+        <div className="flex group-hover:invisible w-full justify-between text-gray-600">
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
               src="/steering-wheel.svg"
@@ -71,6 +71,10 @@ const CarCard = ({ car }: CarCardProps) => {
           />
         </div>
       </div>
+      <CarDetails 
+      isOpen={isOpen} 
+      closeModal={() => setIsOpen(false)}
+      car={car} />
     </div>
   );
 };
