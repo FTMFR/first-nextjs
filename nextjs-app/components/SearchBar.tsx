@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import { SearchManifacture } from ".";
+import { SearchManufacturer } from ".";
 
 const SearchBar = () => {
-  const [manifacture, setManifacture] = useState("");
+  const [manufacturer, setManufacturer] = useState("");
 
   const searchHandler = () => {
     console.log("this is it");
@@ -12,9 +12,9 @@ const SearchBar = () => {
   return (
     <form className="searchbar" onSubmit={searchHandler}>
       <div className="searchbar__item">
-        <SearchManifacture
-          manifacture={manifacture}
-          setManifacture={setManifacture}
+        <SearchManufacturer
+          manufacturer={manufacturer}
+          setManufacturer={setManufacturer}
         />
       </div>
     </form>

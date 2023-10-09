@@ -4,7 +4,8 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar';
 import CustomeFilter from './CustomeFilter';
-import SearchManifacture from './SearchManifacture';
+import SearchManufacturer from './SearchManifacture';
+import CarCard from './CarCard';
 
 
 export {
@@ -14,5 +15,6 @@ export {
     SearchBar,
     CustomeFilter,
     Footer,
-    SearchManifacture,
+    SearchManufacturer,
+    CarCard,
 };
