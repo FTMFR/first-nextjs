@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { SearchManufacturer } from ".";
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ const SearchBar = () => {
     e.preventDefault();
     if (manufacturer === "" && model === "") {
       return alert("Please Fill in the Search Bar");
-    };
+    }
 
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
   };
@@ -37,7 +37,7 @@ const SearchBar = () => {
       searchParams.set("manufacturer", manufacturer);
     } else {
       searchParams.delete("manufacturer");
-    };
+    }
 
     const newPathname = `${
       window.location.pathname
